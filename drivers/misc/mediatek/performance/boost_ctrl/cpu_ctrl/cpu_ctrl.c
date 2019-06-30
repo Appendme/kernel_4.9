@@ -117,9 +117,11 @@ int update_userlimit_cpu_freq(int kicker, int num_cluster
 			return -EIO;
 	}
 
-	strncat(msg, msg1, LOG_BUF_SIZE);
 	if (log_enable)
-		pr_debug("%s", msg);
+	{
+		pr_debug("%s\n", msg);
+		pr_debug("%s\n", msg1);
+	}
 
 #ifdef CONFIG_TRACING
 	perfmgr_trace_printk("cpu_ctrl", msg);
