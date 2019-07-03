@@ -36,6 +36,36 @@ config MACH_MT8135
 
 endif
 
+config MACH_MT6595
+	bool "MediaTek MT6595"
+	select GENERIC_TIME
+	select GENERIC_CLOCKEVENTS
+	select ARCH_HAS_CPUFREQ
+	select ARM_AMBA
+	select CPU_V7
+	select HAVE_SMP
+	select FIQ_GLUE if (!TRUSTONIC_TEE_SUPPORT)
+	select IRQ_DOMAIN
+	select IRQ_DOMAIN_DEBUG
+	select EXT4_FS
+	select EXT4_FS_ENCRYPTION
+	select EXT4_FS_SECURITY
+	select EXT4_ENCRYPTION
+	select NEED_MACH_MEMORY_H
+	select GENERIC_SCHED_CLOCK
+	select VFP_OPT
+	select KERNEL_MODE_NEON
+	select ARM_HAS_SG_CHAIN
+	select ARM_CRYPTO
+	select CRYPTO_AES_ARM_BS
+	select CRYPTO_SHA256_ARM
+	select MTK_BASE_POWER
+	select MTK_EIC
+	select MTK_GPIO
+	select PINCTRL
+	help
+	  This enable support for MediaTek MT6595
+
 config MACH_MT6765
 	bool "MediaTek MT6765"
 	select GENERIC_TIME
